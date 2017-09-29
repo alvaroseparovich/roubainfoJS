@@ -1,0 +1,28 @@
+{
+	"name":"RoubaInfo JS",
+	"description":"Rouba as info da Hagnos",
+	"version":"0.0.1",
+	"manifest_version": 2,
+
+	"permissions":[
+		"activeTab",
+		"tabs"
+	],
+	"background":{"scripts":["back/background.js"]},
+	"content_scripts": [
+    {
+      "matches":		 ["https://www.hagnos.com.br/*"],
+      "all_frames": true,
+      "js":					 ["content_script.js"],
+      "html":        ["injct.html"]
+    }
+  ],
+	"browser_action":{
+		"default_icon":"icon.png",
+		"default_popup":"popup.html",
+		"default_title":"Rouba Info App em JS"
+	},
+  "web_accessible_resources": [
+    "embed.js"]
+
+}
